@@ -8,7 +8,14 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+       <Auth0Provider
+       domain="dev-7phcck-h.us.auth0.com"
+       clientId="dccJnkThj8jriP1YJDm11PINSN3n6TIw"
+       redirectUri={window.location.origin}
+      audience="https://tracker-api/"
+    >
+      <App />
+    </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
