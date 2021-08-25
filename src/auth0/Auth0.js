@@ -1,11 +1,12 @@
+/* eslint-disable no-unused-vars */
 import { useAuth0 } from '@auth0/auth0-react';
-import { postUser } from '../API';
+import { postUser,getCoins, postGoals } from '../API';
 import LoginButton from './buttons/LogIn';
 import LogoutButton from './buttons/LogOut';
 
+
 const AuthenticationButton = () => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
-
   if (isAuthenticated) {
     const userData = {
       sub: user.sub,
@@ -20,7 +21,12 @@ const AuthenticationButton = () => {
       .then((accessToken) => {
         postUser(userData, accessToken);
       });
-  }
+
+    }
+      
+
+    
+
 
   return isAuthenticated ? <LogoutButton /> : <LoginButton />;
 };
