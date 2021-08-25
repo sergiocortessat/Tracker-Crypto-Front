@@ -25,7 +25,6 @@ export const getCoins = async () => {
 
 // Post requests
 
-
 export const postUser = async (data, accessToken) => {
   const response = await fetch(userEndpoint, {
     method: 'POST',
@@ -50,7 +49,7 @@ export const postGoals = async (data, accessToken) => {
   });
   const goals = await response.json();
   return goals;
-}
+};
 
 export const postMeasurements = async (data, accessToken) => {
   const response = await fetch(measurementEndpoint, {
@@ -63,7 +62,7 @@ export const postMeasurements = async (data, accessToken) => {
   });
   const goals = await response.json();
   return goals;
-}
+};
 
 export const editGoals = async (data, accessToken) => {
   const response = await fetch(goalEndpoint, {
