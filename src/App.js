@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import Auth0 from './auth0/Auth0';
-import { getMeasurements, getGoals, getCoins } from './API';
+import { getMeasurements, getGoals, getCoins } from './API/API';
 
 function App() {
   const [list, setList] = useState();

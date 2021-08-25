@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useAuth0 } from '@auth0/auth0-react';
-import { postUser, getCoins, postGoals } from '../API';
+import { postUser, getCoins, postGoals } from '../API/API';
 import LoginButton from './buttons/LogIn';
 import LogoutButton from './buttons/LogOut';
 
