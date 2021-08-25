@@ -23,6 +23,12 @@ export const getCoins = async () => {
   return user;
 };
 
+export const getUser = async () => {
+  const response = await fetch(userEndpoint);
+  const user = await response.json();
+  return user;
+};
+
 // Post requests
 
 export const postUser = async (data, accessToken) => {

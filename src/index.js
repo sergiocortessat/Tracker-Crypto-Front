@@ -2,10 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import { Auth0Provider } from '@auth0/auth0-react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import App from './App';
+import reducers from './Redux/Reducers';
+
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-
+/* eslint-disable no-underscore-dangle */
+const store = createStore(reducers, /* preloadedState, */
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+/* eslint-enable */
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
@@ -14,7 +21,9 @@ ReactDOM.render(
       redirectUri={window.location.origin}
       audience="https://tracker-api/"
     >
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root'),
