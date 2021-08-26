@@ -1,8 +1,8 @@
-const userEndpoint = 'https://scs-tracker-api.herokuapp.com/users';
-const measurementEndpoint = 'https://scs-tracker-api.herokuapp.com/measurements';
-const goalEndpoint = 'https://scs-tracker-api.herokuapp.com/goals';
-const coinEndpoint = 'https://scs-tracker-api.herokuapp.com/coins';
-const showUserEndpoint = 'https://scs-tracker-api.herokuapp.com/users';
+const userEndpoint = 'http://localhost:3000/users';
+const measurementEndpoint = 'http://localhost:3000/measurements';
+const goalEndpoint = 'http://localhost:3000/goals';
+const coinEndpoint = 'http://localhost:3000/coins';
+const showUserEndpoint = 'http://localhost:3000/users';
 
 // Get requests
 
@@ -14,6 +14,12 @@ export const getMeasurements = async () => {
 
 export const getGoals = async () => {
   const response = await fetch(goalEndpoint);
+  const user = await response.json();
+  return user;
+};
+
+export const getGoal = async (sub) => {
+  const response = await fetch(`${goalEndpoint}/${sub}`);
   const user = await response.json();
   return user;
 };
@@ -77,9 +83,9 @@ export const postMeasurements = async (data, accessToken) => {
   return goals;
 };
 
-export const editGoals = async (data, accessToken) => {
-  const response = await fetch(goalEndpoint, {
-    method: 'PATCH',
+export const editGoals = async (data, accessToken, coinId) => {
+  const response = await fetch(`${goalEndpoint}/${coinId}`, {
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
       authorization: `Bearer ${accessToken}`,

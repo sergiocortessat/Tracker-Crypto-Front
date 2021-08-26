@@ -26,7 +26,7 @@ const setCoins = () => {
         <div key={coins.id}>
           <p>{coins.name}</p>
           <p>{coins.description}</p>
-          <SetGoals />
+          <SetGoals coin={coins.id} />
         </div>
       ))}
     </div>
