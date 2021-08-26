@@ -12,7 +12,7 @@ import {
 import { updateCoins } from './Redux/Actions';
 import Loading from './auth0/Loading';
 import NavBar from './components/navBar';
-import SetGoals from './components/setGoals';
+import SetCoins from './components/setCoins';
 
 function App() {
   // const [list, setList] = useState();
@@ -36,7 +36,7 @@ function App() {
             {isAuthenticated ? (
               <>
                 <NavBar />
-                <SetGoals />
+                <SetCoins />
               </>
             ) : (
               <div>

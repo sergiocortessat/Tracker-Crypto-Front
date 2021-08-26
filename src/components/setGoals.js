@@ -6,14 +6,17 @@ import { updateUser } from '../Redux/Actions';
 import { userData } from '../staticData';
 import { postGoals } from '../API/API';
 
-const setGoal = () => {
+const setGoals = () => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const info = useSelector((state) => state.user);
+
+  // console.log(info);
 
   return (
-    <div>
-      Goal
-    </div>
+    <>
+      Hello
+    </>
   );
 };
 
-export default setGoal;
+export default setGoals;
