@@ -21,9 +21,12 @@ const AddMeasurement = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const tempGoal = currentUser.user.coins.filter((c) => c.id === coin)[0].goals;
+    const goalID = tempGoal.filter((g) => g.sub === user.sub)[0].id;
+    const userID = currentUser.user.id;
     getAccessTokenSilently()
       .then((accessToken) => {
-        postMeasurements({ user_id: currentUser.id, goal_id: coin, unit: 1 }, accessToken);
+        postMeasurements({ user_id: userID, goal_id: goalID, unit: 1 }, accessToken);
       });
   };
 
@@ -44,6 +47,7 @@ const AddMeasurement = () => {
           ))}
           )
         </select>
+        <input type="text" id="fname" name="fname" />
         <input type="submit" value="Submit" id={coin} onClick={(e) => handleSubmit(e)} />
       </label>
     </form>

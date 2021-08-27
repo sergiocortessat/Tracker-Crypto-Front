@@ -83,6 +83,8 @@ export const postMeasurements = async (data, accessToken) => {
   return goals;
 };
 
+// Patch
+
 export const editGoals = async (data, accessToken, coinId) => {
   const response = await fetch(`${goalEndpoint}/${coinId}`, {
     method: 'PUT',

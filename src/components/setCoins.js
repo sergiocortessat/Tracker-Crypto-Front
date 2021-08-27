@@ -16,9 +16,8 @@ const setCoins = () => {
   const [temp, setTemp] = useState([]);
 
   useEffect(() => {
-    getUsers().then((res) => {
-      const filtered = res.filter((a) => a.sub === user.sub);
-      dispatch(updateUser(filtered[0]));
+    getUser(user.sub).then((res) => {
+      dispatch(updateUser(res));
     });
   }, []);
   return (
