@@ -17,7 +17,7 @@ const setGoals = ({ coin }) => {
   const info = useSelector((state) => state.user);
   // set goals state
 
-  const [goal, setGoal] = useState(null);
+  const [goal, setGoal] = useState('');
   const [goals, setGoals] = useState(null);
   useEffect(() => {
     getGoals().then((res) => {
@@ -38,7 +38,7 @@ const setGoals = ({ coin }) => {
         // console.log(res);
         getAccessTokenSilently()
           .then((accessToken) => {
-            postGoals({ sub: user.sub, coin_id: coin, goal }, accessToken);
+            postGoals({ sub: user.sub, coin_id: coin, goal: 1 }, accessToken);
           });
       }
     });
@@ -80,8 +80,8 @@ const setGoals = ({ coin }) => {
           Goal:
           {' '}
           {coin}
-          <input defaultValue={goal} placeholder="" type="number" id={coin} name="quantity" min="1" max="1000" onChange={changeGoal} />
-
+          <input value={goal || 1} placeholder="" type="number" id={coin} name="quantity" min="1" max="1000" onChange={changeGoal} />
+          ;
         </label>
       </form>
     </>

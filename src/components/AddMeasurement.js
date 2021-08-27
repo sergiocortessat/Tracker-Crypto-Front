@@ -12,25 +12,39 @@ const AddMeasurement = () => {
   const currentUser = useSelector((state) => state.user);
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
   const [unit, setUnit] = useState();
+  const [limit, setLimit] = useState(1);
 
   useEffect(() => {
     getUsers().then((res) => {
       const filtered = res.filter((a) => a.sub === user.sub);
+      // const goals = filtered[0].coins.filter((a) => a.id === coin)[0];
+      // const { goal } = goals.goals.filter((g) => g.sub === user.sub)[0];
+      // setLimit(goal);
       dispatch(updateUser(filtered[0]));
     });
   }, []);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     const tempGoal = currentUser.length < 1 ? currentUser.user.coins
+  //       .filter((c) => c.id === coin)[0] : 1;
+  //     const { goal } = tempGoal.length < 1 ? tempGoal.filter((g) => g.sub === user.sub)[0] : 1;
+  //     setLimit(goal);
+  //   }, 1000);
+  // });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const tempGoal = currentUser.user.coins.filter((c) => c.id === coin)[0].goals;
     const goalID = tempGoal.filter((g) => g.sub === user.sub)[0].id;
+    const { goal } = tempGoal.filter((g) => g.sub === user.sub);
     const userID = currentUser.user.id;
     getAccessTokenSilently()
       .then((accessToken) => {
         postMeasurements({ user_id: userID, goal_id: goalID, unit }, accessToken);
       });
   };
-  console.log(unit);
+  console.log(limit);
   return (
   // create a form with list items and
     <form action="/action_page.php">
@@ -55,7 +69,7 @@ const AddMeasurement = () => {
           value={unit}
         /> */}
         <label htmlFor="quantity">
-          <input placeholder="Units" value={unit} type="number" id={coin} name="quantity" step={0.1} min="0" max="1000" onChange={(e) => setUnit(e.target.value)} />
+          <input placeholder="Units" value={unit} type="number" id={coin} step={0.01} min="0" max={limit} onChange={(e) => setUnit(e.target.value)} />
 
         </label>
         <input type="submit" value="Submit" id={coin} onClick={(e) => handleSubmit(e)} />
