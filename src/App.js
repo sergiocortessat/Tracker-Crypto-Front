@@ -13,6 +13,9 @@ import { updateCoins } from './Redux/Actions';
 import Loading from './auth0/Loading';
 import NavBar from './components/navBar';
 import SetCoins from './components/setCoins';
+import Measurement from './components/Measurement';
+import Footer from './components/Footer';
+import AddMeasurement from './components/AddMeasurement';
 
 function App() {
   // const [list, setList] = useState();
@@ -28,26 +31,26 @@ function App() {
   // const { coins } = useSelector((state) => state.coins);
 
   return (
-
-    <BrowserRouter>
-      <Switch>
-        <Route path="/">
-          <div>
-            {isAuthenticated ? (
-              <>
-                <NavBar />
-                <SetCoins />
-              </>
-            ) : (
-              <div>
-                <h1>Please login</h1>
-                <Auth0 />
-              </div>
-            )}
+    <>
+      {isAuthenticated ? (
+        <BrowserRouter>
+          <div className="App">
+            <NavBar />
+            <Switch>
+              <Route exact path="/measurements/:id" component={Measurement} />
+              <Route exact path="/add-measurement" component={AddMeasurement} />
+              <Route path="/" component={SetCoins} />
+            </Switch>
+            <Footer />
           </div>
-        </Route>
-      </Switch>
-    </BrowserRouter>
+        </BrowserRouter>
+      ) : (
+        <div>
+          <h1>Please login</h1>
+          <Auth0 />
+        </div>
+      )}
+    </>
   );
 }
 

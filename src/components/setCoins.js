@@ -2,6 +2,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { updateUser } from '../Redux/Actions';
 import { userData } from '../staticData';
 import { postGoals, getUser, getUsers } from '../API/API';
@@ -24,8 +25,12 @@ const setCoins = () => {
     <div>
       {coins && coins.map((coins) => (
         <div key={coins.id}>
-          <p>{coins.name}</p>
-          <p>{coins.description}</p>
+          <Link to={`/measurements/${coins.id}`} className="pokemon-list-link" data-testid="list" key={coins.id}>
+            <div key={coins.id}>
+              <p>{coins.name}</p>
+              <p>{coins.description}</p>
+            </div>
+          </Link>
           <SetGoals coin={coins.id} />
         </div>
       ))}

@@ -8,6 +8,7 @@ import { userData } from '../staticData';
 import {
   postGoals, editGoals, getGoal, getGoals,
 } from '../API/API';
+import Loading from '../auth0/Loading';
 
 const setGoals = ({ coin }) => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
@@ -28,6 +29,8 @@ const setGoals = ({ coin }) => {
       });
     });
   }, [temp]);
+
+  const timeOut = setTimeout(1000);
 
   useEffect(() => {
     getGoal(user.sub).then((res) => {
@@ -69,6 +72,7 @@ const setGoals = ({ coin }) => {
       // }
     });
   };
+
   return (
     <>
       <form action="/action_page.php">
@@ -77,6 +81,7 @@ const setGoals = ({ coin }) => {
           {' '}
           {coin}
           <input defaultValue={goal} placeholder="" type="number" id={coin} name="quantity" min="1" max="1000" onChange={changeGoal} />
+
         </label>
       </form>
     </>
