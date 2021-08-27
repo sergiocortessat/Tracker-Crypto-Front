@@ -97,3 +97,15 @@ export const editGoals = async (data, accessToken, coinId) => {
   const user = await response.json();
   return user;
 };
+
+// DELETE
+
+export const deleteMeasurement = async (id, accessToken) => {
+  fetch(`${measurementEndpoint}/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${accessToken}`,
+    },
+  });
+};

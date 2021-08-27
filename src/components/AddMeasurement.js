@@ -11,6 +11,7 @@ const AddMeasurement = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.user);
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const [unit, setUnit] = useState();
 
   useEffect(() => {
     getUsers().then((res) => {
@@ -26,10 +27,10 @@ const AddMeasurement = () => {
     const userID = currentUser.user.id;
     getAccessTokenSilently()
       .then((accessToken) => {
-        postMeasurements({ user_id: userID, goal_id: goalID, unit: 1 }, accessToken);
+        postMeasurements({ user_id: userID, goal_id: goalID, unit }, accessToken);
       });
   };
-
+  console.log(unit);
   return (
   // create a form with list items and
     <form action="/action_page.php">
@@ -47,7 +48,16 @@ const AddMeasurement = () => {
           ))}
           )
         </select>
-        <input type="text" id="fname" name="fname" />
+        {/* <input
+          type="text"
+          placeholder="Units"
+          onChange={(event) => setUnit(event.currentTarget.value)}
+          value={unit}
+        /> */}
+        <label htmlFor="quantity">
+          <input placeholder="Units" value={unit} type="number" id={coin} name="quantity" step={0.1} min="0" max="1000" onChange={(e) => setUnit(e.target.value)} />
+
+        </label>
         <input type="submit" value="Submit" id={coin} onClick={(e) => handleSubmit(e)} />
       </label>
     </form>

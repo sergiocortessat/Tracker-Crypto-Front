@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Auth0 from '../auth0/Auth0';
 
 const NavBar = () => {
@@ -11,6 +12,7 @@ const NavBar = () => {
   return (
     <div>
       <Auth0 />
+      <Link to="/">Home</Link>
       <h1>
         Welcome
         {' '}
