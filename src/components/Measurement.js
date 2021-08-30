@@ -3,6 +3,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { deleteMeasurement, getGoal } from '../API/API';
+import SetGoals from './setGoals';
 
 const Measurement = () => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
@@ -26,17 +27,20 @@ const Measurement = () => {
   };
 
   return (
-    <div className="measurement">
-      {measures && measures.map((measures) => (
-        <div key={measures.id} className="measurement-item">
-          {measures.created_at}
-          {measures.unit}
-          {' '}
-          {measures.id}
-          <button type="button" onClick={() => handleDelete(measures.id)}>Delete</button>
-        </div>
-      ))}
-    </div>
+    <>
+      <SetGoals coin={Number(id)} />
+      <div className="measurement">
+        {measures && measures.map((measures) => (
+          <div key={measures.id} className="measurement-item">
+            {measures.created_at}
+            {measures.unit}
+            {' '}
+            {measures.id}
+            <button type="button" onClick={() => handleDelete(measures.id)}>Delete</button>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

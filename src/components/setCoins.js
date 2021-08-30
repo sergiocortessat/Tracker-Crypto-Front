@@ -7,6 +7,9 @@ import { updateUser } from '../Redux/Actions';
 import { userData } from '../staticData';
 import { postGoals, getUser, getUsers } from '../API/API';
 import SetGoals from './setGoals';
+import Coin from './Coin';
+import '../Style/Coin.scss';
+import CircularProgress from './CircularProgress';
 
 const setCoins = () => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
@@ -21,19 +24,22 @@ const setCoins = () => {
     });
   }, []);
   return (
-    <div>
-      {coins && coins.map((coins) => (
-        <div key={coins.id}>
-          <Link to={`/measurements/${coins.id}`} className="pokemon-list-link" data-testid="list" key={coins.id}>
-            <div key={coins.id}>
-              <p>{coins.name}</p>
-              <p>{coins.description}</p>
-            </div>
-          </Link>
-          <SetGoals coin={coins.id} />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="main-progress">
+        {/* <CircularProgress /> */}
+        here goes progress
+      </div>
+      <div className="all-coins">
+        {coins && coins.map((coins) => (
+          <div key={coins.id} className="main-coin">
+            <Link to={`/measurements/${coins.id}`} className="coin-list-link" data-testid="list" key={coins.id}>
+              <Coin coins={coins} />
+            </Link>
+            {/* <SetGoals coin={coins.id} /> */}
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

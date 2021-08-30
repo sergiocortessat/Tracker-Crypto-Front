@@ -1,0 +1,29 @@
+.all-coins {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.main-coin {
+  width: 50%;
+}
+
+.coin-list-link {
+  text-decoration: none;
+}
+
+.coin {
+  display: flex;
+  flex-direction: row;
+}
+
+.crypto-icon {
+  width: 100px;
+
+  img {
+    width: 100%;
+    height: initial;
+  }
+}

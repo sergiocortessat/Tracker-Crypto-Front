@@ -1,0 +1,14 @@
+nav {
+  background: turquoise;
+
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+    li > img {
+      border-radius: 50%;
+      width: 60px;
+    }
+  }
+}
