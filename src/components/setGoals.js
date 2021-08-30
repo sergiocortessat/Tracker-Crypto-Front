@@ -3,7 +3,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateUser } from '../Redux/Actions';
+import { updateGoals, updateUser } from '../Redux/Actions';
 import { userData } from '../staticData';
 import {
   postGoals, editGoals, getGoal, getGoals,
@@ -19,10 +19,11 @@ const setGoals = ({ coin }) => {
 
   const [goal, setGoal] = useState('');
   const [goals, setGoals] = useState(null);
+  const dispatch = useDispatch();
   useEffect(() => {
-    getGoals().then((res) => {
+    getGoal(user.sub).then((res) => {
       res.filter((item) => {
-        if (item.sub === user.sub && item.coin_id === coin) {
+        if (item.coin_id === coin) {
           setGoal(item.goal);
           // console.log(item.goal);
         }
@@ -32,17 +33,17 @@ const setGoals = ({ coin }) => {
 
   const timeOut = setTimeout(1000);
 
-  useEffect(() => {
-    getGoal(user.sub).then((res) => {
-      if (res.length < 1) {
-        // console.log(res);
-        getAccessTokenSilently()
-          .then((accessToken) => {
-            postGoals({ sub: user.sub, coin_id: coin, goal: 1 }, accessToken);
-          });
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   getGoal(user.sub).then((res) => {
+  //     if (res.length < 1) {
+  //       // console.log(res);
+  //       getAccessTokenSilently()
+  //         .then((accessToken) => {
+  //           postGoals({ sub: user.sub, coin_id: coin, goal: 1 }, accessToken);
+  //         });
+  //     }
+  //   });
+  // }, []);
 
   // getGoals().then((res) => {
   //   if (res.length < 1) {

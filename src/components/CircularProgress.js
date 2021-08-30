@@ -4,12 +4,13 @@ import {
   buildStyles,
 } from 'react-circular-progressbar';
 import RadialSeparators from './RadialSeparator';
+import 'react-circular-progressbar/dist/styles.css';
 
 const CircularProgress = () => (
   <>
     <CircularProgressbarWithChildren
-      value={80}
-      text={`${80}%`}
+      value={10}
+      text={`${90}%`}
       strokeWidth={10}
       styles={buildStyles({
         strokeLinecap: 'butt',
@@ -25,7 +26,6 @@ const CircularProgress = () => (
         }}
       />
     </CircularProgressbarWithChildren>
-    ;
   </>
 
 );

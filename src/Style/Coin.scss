@@ -2,12 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   width: 90%;
-  justify-content: center;
-  margin: 0 auto;
-}
+  margin: 40px auto;
+  align-items: center;
 
-.main-coin {
-  width: 50%;
+  .main-coin {
+    display: flex;
+    width: 50%;
+  }
 }
 
 .coin-list-link {
@@ -17,6 +18,7 @@
 .coin {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .crypto-icon {
@@ -24,6 +26,6 @@
 
   img {
     width: 100%;
-    height: initial;
+    height: auto;
   }
 }
