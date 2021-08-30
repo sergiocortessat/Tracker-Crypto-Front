@@ -9,9 +9,10 @@ import { getGoal } from '../API/API';
 const Coin = ({ coins, setSum }) => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
   const [goal, setGoal] = useState([]);
+
   useEffect(() => {
     getGoal(user.sub).then((res) => {
-      const { goal } = res.filter((item) => item.coin_id === coins.id)[0];
+      const { goal, measurements } = res.filter((item) => item.coin_id === coins.id)[0];
       setGoal(goal);
       setSum((prev) => prev + goal);
       // console.log(sum);

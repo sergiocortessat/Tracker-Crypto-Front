@@ -22,6 +22,7 @@ const setCoins = () => {
   const dispatch = useDispatch();
   const [goals, setGoals] = useState([]);
   const [sum, setSum] = useState(0);
+  const [measures, setMeasures] = useState([]);
 
   useEffect(() => {
     getUser(user.sub).then((res) => {
@@ -32,6 +33,7 @@ const setCoins = () => {
     getGoal(user.sub).then((res) => {
       // dispatch(updateGoals(res));
       setGoals(res);
+      setMeasures(res);
       if (res.length < 1) {
         // console.log(res);
         getAccessTokenSilently()
@@ -45,11 +47,10 @@ const setCoins = () => {
       }
     });
   }, []);
-
   return (
     <>
       <div className="main-progress">
-        <CircularProgress sum={sum} />
+        <CircularProgress sum={sum} measures={measures} />
       </div>
       <div className="all-coins">
         {coins && coins.map((coins) => (
