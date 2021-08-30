@@ -7,7 +7,7 @@ const goalReducer = (state = initialState, action) => {
     case 'ALL_GOALS':
       return {
         ...state,
-        coins: action.payload,
+        goal: action.payload,
       };
     default:
       return state;

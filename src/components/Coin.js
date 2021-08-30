@@ -2,20 +2,22 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useAuth0 } from '@auth0/auth0-react';
+import { set } from 'lodash';
 import React, { useEffect, useState } from 'react';
 import { getGoal } from '../API/API';
 
-const Coin = ({ coins, goals }) => {
+const Coin = ({ coins, setSum }) => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
-  const { goal, setGoal } = useState();
+  const [goal, setGoal] = useState([]);
   useEffect(() => {
     getGoal(user.sub).then((res) => {
       const { goal } = res.filter((item) => item.coin_id === coins.id)[0];
-      console.log(goal);
+      setGoal(goal);
+      setSum((prev) => prev + goal);
+      // console.log(sum);
     });
   }, []);
 
-  // console.log(goals);
   return (
     <div key={coins.id} className="coin">
       <div className="crypto-icon">
@@ -23,7 +25,8 @@ const Coin = ({ coins, goals }) => {
       </div>
       <div>
         <p>{coins.name}</p>
-        <p>hello</p>
+        <p>Goal:</p>
+        <p>{goal && goal}</p>
       </div>
     </div>
   );

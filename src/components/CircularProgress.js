@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import {
   CircularProgressbarWithChildren,
@@ -6,10 +8,10 @@ import {
 import RadialSeparators from './RadialSeparator';
 import 'react-circular-progressbar/dist/styles.css';
 
-const CircularProgress = () => (
+const CircularProgress = ({ sum }) => (
   <>
     <CircularProgressbarWithChildren
-      value={10}
+      value={90}
       text={`${90}%`}
       strokeWidth={10}
       styles={buildStyles({
