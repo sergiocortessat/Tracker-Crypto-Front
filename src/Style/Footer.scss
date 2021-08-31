@@ -13,8 +13,9 @@ footer {
     justify-content: space-around;
 
     a {
-      margin: 10px 5px;
+      padding: 10px 0;
       text-decoration: none;
+      width: 100%;
 
       li {
         display: flex;
@@ -29,6 +30,20 @@ footer {
           font-size: 0.6rem;
           color: #fff;
         }
+      }
+    }
+  }
+
+  a:hover {
+    background-color: #fff;
+
+    li {
+      svg {
+        color: black;
+      }
+
+      p {
+        color: black;
       }
     }
   }

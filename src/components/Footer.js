@@ -15,7 +15,7 @@ const Footer = () => {
         <Link to="/add-measurement">
           <li className="add-measurement">
             <AddBoxIcon />
-            <p>Add measurement</p>
+            <p>Add measure</p>
           </li>
         </Link>
         <Link to="/">
