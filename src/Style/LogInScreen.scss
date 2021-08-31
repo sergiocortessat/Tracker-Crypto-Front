@@ -5,4 +5,31 @@ $blue: #62b5e5;
 .log-in-container {
   background-color: $grey;
   height: 100vh;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-items: center;
+  align-items: center;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    color: white;
+  }
+
+  button {
+    background-color: #addc91;
+    border-radius: 5px;
+    width: 30%;
+    margin: 0 auto;
+    height: 100vh;
+    font-size: 1.7rem;
+    color: white;
+
+    span {
+      display: inline-block;
+      transform: rotate(-90deg);
+    }
+  }
 }
