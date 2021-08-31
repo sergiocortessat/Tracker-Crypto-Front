@@ -7,6 +7,10 @@ import MainCircularProgress from './MainCirculaProgress';
 
 const CircularProgress = ({ sum, measures }) => {
   const [aSum, setASum] = useState(0);
+  const today = new Date();
+  const date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+  const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][new Date().getDay()];
+  const currentDate = `${date} ${weekday}`;
   useEffect(() => {
     let result = 0;
     measures.map((measure) => {
@@ -19,10 +23,12 @@ const CircularProgress = ({ sum, measures }) => {
     });
   }, [measures]);
   const percentage = ((aSum * 100) / sum);
-  // console.log(aSum);
+  console.log(currentDate);
   return (
-    <MainCircularProgress percentage={percentage} />
-
+    <div>
+      <h2>{currentDate}</h2>
+      <MainCircularProgress percentage={percentage} />
+    </div>
   );
 };
 

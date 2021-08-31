@@ -29,7 +29,7 @@ const Footer = () => {
           <p>Your Progress</p>
         </li>
       </Link>
-      <Link to="/">
+      <Link to="/profile">
         <li className="more">
           <MoreHorizIcon />
           <p>More</p>

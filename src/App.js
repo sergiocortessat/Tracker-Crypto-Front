@@ -16,6 +16,7 @@ import SetCoins from './components/setCoins';
 import Measurement from './components/Measurement';
 import Footer from './components/Footer';
 import AddMeasurement from './components/AddMeasurement';
+import Profile from './components/Profile';
 
 function App() {
   // const [list, setList] = useState();
@@ -39,6 +40,7 @@ function App() {
             <Switch>
               <Route exact path="/measurements/:id" component={Measurement} />
               <Route exact path="/add-measurement" component={AddMeasurement} />
+              <Route exact path="/profile" component={Profile} />
               <Route path="/" component={SetCoins} />
             </Switch>
             <Footer />

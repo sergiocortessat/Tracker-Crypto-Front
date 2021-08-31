@@ -4,9 +4,10 @@
   bottom: 0;
   height: auto;
   list-style: none;
-  background-color: turquoise;
+  background-color: #67899c;
   width: 100%;
   justify-content: space-around;
+  color: #fff;
 
   a {
     margin: 10px 5px;
@@ -17,8 +18,13 @@
       flex-direction: column;
       align-items: center;
 
+      svg {
+        color: lightgrey;
+      }
+
       p {
         font-size: 0.6rem;
+        color: #fff;
       }
     }
   }

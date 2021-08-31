@@ -23,7 +23,7 @@ const NavBar = () => {
           <h2>
             Welcome
             {' '}
-            {user.name}
+            {user.given_name}
           </h2>
         </li>
         <li>

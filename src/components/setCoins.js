@@ -52,15 +52,17 @@ const setCoins = () => {
       <div className="main-progress">
         <CircularProgress sum={sum} measures={measures} />
       </div>
-      <div className="all-coins">
-        {coins && coins.map((coins) => (
-          <div key={coins.id} className="main-coin">
-            <Link to={`/measurements/${coins.id}`} className="coin-list-link" data-testid="list" key={coins.id}>
-              <Coin coins={coins} goals={goals} setSum={setSum} />
-            </Link>
-            {/* <SetGoals coin={coins.id} /> */}
-          </div>
-        ))}
+      <div className="coins-container">
+        <div className="all-coins">
+          {coins && coins.map((coins) => (
+            <div key={coins.id} className="main-coin">
+              <Link to={`/measurements/${coins.id}`} className="coin-list-link" data-testid="list" key={coins.id}>
+                <Coin coins={coins} goals={goals} setSum={setSum} />
+              </Link>
+              {/* <SetGoals coin={coins.id} /> */}
+            </div>
+          ))}
+        </div>
       </div>
     </>
   );
