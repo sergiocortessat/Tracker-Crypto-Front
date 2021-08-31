@@ -18,7 +18,7 @@ const CircularProgress = ({ sum, measures }) => {
       setASum(result);
     });
   }, [measures]);
-  const percentage = (sum / aSum) * 100;
+  const percentage = ((aSum * 100) / sum);
   // console.log(aSum);
   return (
     <MainCircularProgress percentage={percentage} />

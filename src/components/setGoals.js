@@ -3,6 +3,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { set } from 'lodash';
 import { updateGoals, updateUser } from '../Redux/Actions';
 import { userData } from '../staticData';
 import {
@@ -10,7 +11,7 @@ import {
 } from '../API/API';
 import Loading from '../auth0/Loading';
 
-const setGoals = ({ coin }) => {
+const setGoals = ({ coin, setChange }) => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
   const [temp, setTemp] = useState(false);
 
@@ -70,6 +71,7 @@ const setGoals = ({ coin }) => {
         });
       setTemp(!temp);
       setGoal(value);
+      setChange(value);
       // }
     });
   };
