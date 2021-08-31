@@ -9,6 +9,7 @@ import LoginButton from './buttons/LogIn';
 import LogoutButton from './buttons/LogOut';
 import { updateUser } from '../Redux/Actions';
 import { userData } from '../staticData';
+import '../Style/NavBar.scss';
 
 const AuthenticationButton = () => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();

@@ -25,12 +25,12 @@ const Coin = ({ coins, setSum }) => {
         <img src={coins.picture} alt={coins.name} />
       </div>
       <div className="crypto-info">
-        <p>{coins.name}</p>
-        <p>
+        <h3>{coins.name}</h3>
+        <h4>
           Goal:
           {' '}
           {goal && goal}
-        </p>
+        </h4>
       </div>
     </div>
   );

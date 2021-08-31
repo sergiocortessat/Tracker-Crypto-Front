@@ -1,3 +1,7 @@
+$grey: #67899c;
+$green: #addc91;
+$blue: #62b5e5;
+
 .coins-container {
   background-color: lightgrey;
   height: 390px;
@@ -44,6 +48,14 @@
   .crypto-info {
     text-align: center;
     padding: 5px 3px;
+
+    h3 {
+      color: $grey;
+    }
+
+    h4 {
+      color: black;
+    }
   }
 
   .crypto-icon {
