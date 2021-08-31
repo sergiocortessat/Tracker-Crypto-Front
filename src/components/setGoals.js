@@ -32,8 +32,6 @@ const setGoals = ({ coin, setChange }) => {
     });
   }, [temp]);
 
-  const timeOut = setTimeout(1000);
-
   // useEffect(() => {
   //   getGoal(user.sub).then((res) => {
   //     if (res.length < 1) {
@@ -80,11 +78,9 @@ const setGoals = ({ coin, setChange }) => {
     <>
       <form action="/action_page.php">
         <label htmlFor="quantity">
-          Goal:
+          Current goal
           {' '}
-          {coin}
           <input value={goal || 1} placeholder="" type="number" id={coin} name="quantity" min="1" max="1000" onChange={changeGoal} />
-          ;
         </label>
       </form>
     </>

@@ -23,10 +23,13 @@ const CircularProgress = ({ sum, measures }) => {
     });
   }, [measures]);
   const percentage = ((aSum * 100) / sum);
-  console.log(currentDate);
   return (
-    <div>
-      <h2>{currentDate}</h2>
+    <div className="progress-icon-home">
+      <h2>
+        Today:
+        {' '}
+        {currentDate}
+      </h2>
       <MainCircularProgress percentage={percentage} />
     </div>
   );

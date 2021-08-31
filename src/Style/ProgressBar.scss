@@ -1,13 +1,19 @@
 .main-progress {
-  width: 110px;
-  margin: 15px auto;
-
-  > div {
+  .progress-icon-home {
     text-align: center;
+    width: 110px;
+    padding: 10px;
+    margin: 0 auto;
 
     h2 {
       margin-bottom: 10px;
       font-size: 0.7rem;
     }
   }
+}
+
+.progress-icon-measurement {
+  text-align: center;
+  width: 160px;
+  margin: 20px auto;
 }

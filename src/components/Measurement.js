@@ -10,6 +10,7 @@ import { deleteMeasurement, getGoal } from '../API/API';
 import MainCircularProgress from './MainCirculaProgress';
 import SetGoals from './setGoals';
 import '../Style/ProgressBar.scss';
+import '../Style/Measurement.scss';
 
 const Measurement = () => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
@@ -21,6 +22,8 @@ const Measurement = () => {
   const [yesterday, setYesterday] = useState([]);
   const [lastWeek, setLastWeek] = useState([]);
   const now = moment(new Date());
+  const coinName = ['Bitcoin', 'Ethereum', 'Cardano', 'Uniswap', 'XRP', 'Polkadot'];
+
   useEffect(() => {
     getGoal(user.sub).then((res) => {
       const temp = res.filter((m) => m.coin_id === Number(id))[0];
@@ -85,48 +88,69 @@ const Measurement = () => {
     fetchData();
   }, [measures]);
 
+  const individualPercentage = (unit) => {
+    const percentage = ((unit * 100) / goal);
+    return percentage;
+  };
+
   return (
-    <>
-      <div className="main-progress">
+    <div className="crypto-container">
+      <div className="crypto-name">
+        {coinName[Number(id) - 1]}
+      </div>
+
+      <div className="progress-icon-measurement">
         <MainCircularProgress percentage={percentage} />
       </div>
+
       <SetGoals coin={Number(id)} setChange={setGoal} />
+
       <div className="measurement">
         {today.length > 0 && (<h2>Today</h2>)}
-        {today && today.map((measures) => (
-          <div key={measures.id} className="measurement-item">
-            <p>
-              Units:
-              {measures.unit}
-            </p>
-            <Moment fromNow>{measures.created_at}</Moment>
-            <button type="button" onClick={() => handleDelete(measures.id)}>Delete</button>
-          </div>
-        ))}
-        {yesterday.length > 0 && (<h2>Yesterday</h2>)}
-        {yesterday && yesterday.map((measures) => (
-          <div key={measures.id} className="measurement-item">
-            <p>
-              Units:
-              {measures.unit}
-            </p>
-            <Moment fromNow>{measures.created_at}</Moment>
-            <button type="button" onClick={() => handleDelete(measures.id)}>Delete</button>
-          </div>
-        ))}
-        {lastWeek.length > 0 && (<h2>Last Week</h2>)}
-        {lastWeek && lastWeek.map((measures) => (
-          <div key={measures.id} className="measurement-item">
-            <p>
-              Units:
-              {measures.unit}
-            </p>
-            <Moment fromNow>{measures.created_at}</Moment>
-            <button type="button" onClick={() => handleDelete(measures.id)}>Delete</button>
-          </div>
-        ))}
+        <div className="measurement-list">
+          {today && today.map((measures) => (
+            <div key={measures.id} className="measurement-item">
+              <div className="measurement-progress">
+                <MainCircularProgress percentage={individualPercentage(measures.unit)} />
+              </div>
+              <div className="item">
+                <p>
+                  Units:
+                  {' '}
+                  {measures.unit}
+                </p>
+                <Moment fromNow>{measures.created_at}</Moment>
+                <button type="button" onClick={() => handleDelete(measures.id)}>Delete</button>
+              </div>
+            </div>
+          ))}
+          {yesterday.length > 0 && (<h2>Yesterday</h2>)}
+          {yesterday && yesterday.map((measures) => (
+            <div key={measures.id} className="measurement-item">
+              <MainCircularProgress percentage={individualPercentage(measures.unit)} />
+              <p>
+                Units:
+                {measures.unit}
+              </p>
+              <Moment fromNow>{measures.created_at}</Moment>
+              <button type="button" onClick={() => handleDelete(measures.id)}>Delete</button>
+            </div>
+          ))}
+          {lastWeek.length > 0 && (<h2>Last Week</h2>)}
+          {lastWeek && lastWeek.map((measures) => (
+            <div key={measures.id} className="measurement-item">
+              <MainCircularProgress percentage={individualPercentage(measures.unit)} />
+              <p>
+                Units:
+                {measures.unit}
+              </p>
+              <Moment fromNow>{measures.created_at}</Moment>
+              <button type="button" onClick={() => handleDelete(measures.id)}>Delete</button>
+            </div>
+          ))}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

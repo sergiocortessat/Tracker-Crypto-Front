@@ -10,32 +10,34 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 const Footer = () => {
   const x = 0;
   return (
-    <ul className="footer">
-      <Link to="/add-measurement">
-        <li className="add-measurement">
-          <AddBoxIcon />
-          <p>Add measurement</p>
-        </li>
-      </Link>
-      <Link to="/">
-        <li className="track-item">
-          <TrendingUpIcon />
-          <p>Track It</p>
-        </li>
-      </Link>
-      <Link to="/">
-        <li className="progress">
-          <PieChartIcon />
-          <p>Your Progress</p>
-        </li>
-      </Link>
-      <Link to="/profile">
-        <li className="more">
-          <MoreHorizIcon />
-          <p>More</p>
-        </li>
-      </Link>
-    </ul>
+    <footer className="footer">
+      <ul className="footer">
+        <Link to="/add-measurement">
+          <li className="add-measurement">
+            <AddBoxIcon />
+            <p>Add measurement</p>
+          </li>
+        </Link>
+        <Link to="/">
+          <li className="track-item">
+            <TrendingUpIcon />
+            <p>Track It</p>
+          </li>
+        </Link>
+        <Link to="/">
+          <li className="progress">
+            <PieChartIcon />
+            <p>Your Progress</p>
+          </li>
+        </Link>
+        <Link to="/profile">
+          <li className="more">
+            <MoreHorizIcon />
+            <p>More</p>
+          </li>
+        </Link>
+      </ul>
+    </footer>
   );
 };
 

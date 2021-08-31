@@ -1,9 +1,14 @@
-const userEndpoint = 'http://localhost:3000/users';
-const measurementEndpoint = 'http://localhost:3000/measurements';
-const goalEndpoint = 'http://localhost:3000/goals';
-const coinEndpoint = 'http://localhost:3000/coins';
-const showUserEndpoint = 'http://localhost:3000/users';
+// const userEndpoint = 'http://localhost:3000/users';
+// const measurementEndpoint = 'http://localhost:3000/measurements';
+// const goalEndpoint = 'http://localhost:3000/goals';
+// const coinEndpoint = 'http://localhost:3000/coins';
+// const showUserEndpoint = 'http://localhost:3000/users';
 
+const userEndpoint = 'https://scs-tracker-api.herokuapp.com/users';
+const measurementEndpoint = 'https://scs-tracker-api.herokuapp.com/measurements';
+const goalEndpoint = 'https://scs-tracker-api.herokuapp.com/goals';
+const coinEndpoint = 'https://scs-tracker-api.herokuapp.com/coins';
+const showUserEndpoint = 'https://scs-tracker-api.herokuapp.com/users';
 // Get requests
 
 export const getMeasurements = async () => {

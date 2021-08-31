@@ -1,0 +1,89 @@
+$grey: #67899c;
+
+.crypto-container {
+  height: 100%;
+  color: $grey;
+
+  .crypto-name {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 2rem;
+  }
+
+  form {
+    text-align: center;
+    margin: 30px 0 30px 0;
+
+    input {
+      width: 60px;
+      text-align: center;
+    }
+  }
+
+  .measurement {
+    background: lightgrey;
+    min-height: 250px;
+
+    h2 {
+      font-size: 1.6rem;
+      padding: 20px 0 10px 20px;
+    }
+
+    .measurement-list {
+      margin-top: 10px;
+      padding-bottom: 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #67899c;
+
+      .measurement-item {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin-bottom: 10px;
+        background-color: white;
+        height: 50px;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 10px;
+
+        .measurement-progress {
+          width: 60px;
+          padding: 15px 8px 15px 8px;
+        }
+
+        .item {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          color: $grey;
+        }
+
+        p {
+          margin: 0 0 0 2px;
+          font-size: 1rem;
+          width: 90%;
+          color: black;
+        }
+
+        time {
+          text-align: center;
+          margin: 0 auto;
+          width: 90%;
+          font-size: 0.8rem;
+          color: black;
+        }
+
+        button {
+          background-color: #addc91;
+          text-align: center;
+          margin: 0 15px;
+          padding: 5px;
+          border-radius: 15px;
+          color: white;
+        }
+      }
+    }
+  }
+}
