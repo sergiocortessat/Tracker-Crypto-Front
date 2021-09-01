@@ -20,7 +20,9 @@ import LogInScreen from './components/LogInScreen';
 
 function App() {
   // const [list, setList] = useState();
-  const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const {
+    user, isAuthenticated, getAccessTokenSilently, isLoading,
+  } = useAuth0();
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -30,6 +32,10 @@ function App() {
   }, []);
 
   // const { coins } = useSelector((state) => state.coins);
+
+  if (isLoading) {
+    return <Loading />;
+  }
 
   return (
     <>

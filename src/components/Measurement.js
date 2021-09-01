@@ -124,28 +124,43 @@ const Measurement = () => {
               </div>
             </div>
           ))}
-          {yesterday.length > 0 && (<h2>Yesterday</h2>)}
+        </div>
+
+        {yesterday.length > 0 && (<h2>Yesterday</h2>)}
+        <div className="measurement-list">
           {yesterday && yesterday.map((measures) => (
             <div key={measures.id} className="measurement-item">
-              <MainCircularProgress percentage={individualPercentage(measures.unit)} />
-              <p>
-                Units:
-                {measures.unit}
-              </p>
-              <Moment fromNow>{measures.created_at}</Moment>
-              <button type="button" onClick={() => handleDelete(measures.id)}>Delete</button>
+              <div className="measurement-progress">
+                <MainCircularProgress percentage={individualPercentage(measures.unit)} />
+              </div>
+              <div className="item">
+                <p>
+                  Units:
+                  {' '}
+                  {measures.unit}
+                </p>
+                <Moment fromNow>{measures.created_at}</Moment>
+                <button type="button" onClick={() => handleDelete(measures.id)}>Delete</button>
+              </div>
             </div>
           ))}
-          {lastWeek.length > 0 && (<h2>Last Week</h2>)}
+        </div>
+        {lastWeek.length > 0 && (<h2>Last Week</h2>)}
+        <div className="measurement-list">
           {lastWeek && lastWeek.map((measures) => (
             <div key={measures.id} className="measurement-item">
-              <MainCircularProgress percentage={individualPercentage(measures.unit)} />
-              <p>
-                Units:
-                {measures.unit}
-              </p>
-              <Moment fromNow>{measures.created_at}</Moment>
-              <button type="button" onClick={() => handleDelete(measures.id)}>Delete</button>
+              <div className="measurement-progress">
+                <MainCircularProgress percentage={individualPercentage(measures.unit)} />
+              </div>
+              <div className="item">
+                <p>
+                  Units:
+                  {' '}
+                  {measures.unit}
+                </p>
+                <Moment fromNow>{measures.created_at}</Moment>
+                <button type="button" onClick={() => handleDelete(measures.id)}>Delete</button>
+              </div>
             </div>
           ))}
         </div>
