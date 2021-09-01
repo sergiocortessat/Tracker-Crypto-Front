@@ -79,6 +79,7 @@ const Measurement = () => {
     } catch (e) {
       return e;
     }
+    return null;
   };
 
   useEffect(() => {
