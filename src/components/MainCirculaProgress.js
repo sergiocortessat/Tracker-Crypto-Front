@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable array-callback-return */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   CircularProgressbarWithChildren,
   buildStyles,
@@ -31,6 +28,10 @@ const MainCircularProgress = ({ percentage }) => (
       />
     </CircularProgressbarWithChildren>
   </>
-
 );
+// Prop types
+MainCircularProgress.propTypes = {
+  percentage: PropTypes.number.isRequired,
+};
+
 export default MainCircularProgress;

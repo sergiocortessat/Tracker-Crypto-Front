@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable array-callback-return */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import MainCircularProgress from './MainCirculaProgress';
 
 const CircularProgress = ({ sum, measures }) => {
@@ -13,10 +10,11 @@ const CircularProgress = ({ sum, measures }) => {
   const currentDate = `${date} ${weekday}`;
   useEffect(() => {
     let result = 0;
-    measures.map((measure) => {
+    measures.forEach((measure) => {
       if (measure.measurements.length > 0) {
-        measure.measurements.map((measurement) => {
-          measurement.unit ? (result += measurement.unit) : (result);
+        measure.measurements.forEach((measurement) => {
+          const temp = measurement.unit ? result += measurement.unit : result;
+          result = temp;
         });
       }
       setASum(result);
@@ -33,6 +31,12 @@ const CircularProgress = ({ sum, measures }) => {
       <MainCircularProgress percentage={percentage} />
     </div>
   );
+};
+
+// prop validations
+CircularProgress.propTypes = {
+  sum: PropTypes.number.isRequired,
+  measures: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default CircularProgress;

@@ -28,7 +28,6 @@ nav {
   .menu-icon {
     align-items: center;
     display: flex;
-    position: relative;
     z-index: 2;
 
     button {
@@ -49,10 +48,10 @@ nav {
 
   .auth-button {
     padding: 10px;
-    margin-right: 10px;
     background-color: $green;
     border-radius: 5px;
     color: white;
+    margin: 1rem 1rem 1rem auto;
   }
 
   .mobile-links-inactive {

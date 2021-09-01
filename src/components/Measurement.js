@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-expressions */
-/* eslint-disable array-callback-return */
-/* eslint-disable no-unused-vars */
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -13,7 +10,7 @@ import '../Style/ProgressBar.scss';
 import '../Style/Measurement.scss';
 
 const Measurement = () => {
-  const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const { user, getAccessTokenSilently } = useAuth0();
   const { id } = useParams();
   const [measures, setMeasures] = useState([]);
   const [goal, setGoal] = useState(null);

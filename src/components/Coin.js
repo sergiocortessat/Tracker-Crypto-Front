@@ -1,21 +1,17 @@
-/* eslint-disable array-callback-return */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import { useAuth0 } from '@auth0/auth0-react';
-import { set } from 'lodash';
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { getGoal } from '../API/API';
 
 const Coin = ({ coins, setSum }) => {
-  const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const { user } = useAuth0();
   const [goal, setGoal] = useState([]);
 
   useEffect(() => {
     getGoal(user.sub).then((res) => {
-      const { goal, measurements } = res.filter((item) => item.coin_id === coins.id)[0];
+      const { goal } = res.filter((item) => item.coin_id === coins.id)[0];
       setGoal(goal);
       setSum((prev) => prev + goal);
-      // console.log(sum);
     });
   }, []);
 
@@ -34,6 +30,16 @@ const Coin = ({ coins, setSum }) => {
       </div>
     </div>
   );
+};
+
+// Prop types
+Coin.propTypes = {
+  coins: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    picture: PropTypes.string,
+  }).isRequired,
+  setSum: PropTypes.func.isRequired,
 };
 
 export default Coin;
