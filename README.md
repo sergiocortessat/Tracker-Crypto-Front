@@ -13,7 +13,7 @@ a list of crypto currencies that they are interested in. The user can then set a
 
 ## Live Version
 
-* [Live Demo]() 
+* [Live Demo](https://scs-tracker-crypto.netlify.app/) 
 
 <br />
 
@@ -42,7 +42,19 @@ a list of crypto currencies that they are interested in. The user can then set a
 ## Screenshot
 
 <p align="center">
+  <img height="auto" src="Screenshot1.png">
+</p>
+<p align="center">
   <img height="auto" src="Screenshot.png">
+</p>
+<p align="center">
+  <img height="auto" src="Screenshot2.png">
+</p>
+<p align="center">
+  <img height="auto" src="Screenshot3.png">
+</p>
+<p align="center">
+  <img height="auto" src="Screenshot4.png">
 </p>
 
 ### Built With
@@ -68,16 +80,16 @@ Terminal or similar to execute the program.
 
 ## Clone project
 - To get a local copy up and running follow these simple example steps.
-- Clone this repository with git clone ```https://github.com/sergiocortessat/React_Redux_Pokemon_API``` using your terminal or command line.
-- Change to the project directory by entering: ```cd React_Redux_Pokemon_API``` in the terminal.
+- Clone this repository with git clone ```https://github.com/sergiocortessat/Tracker_Crypto_Front/tree/feature``` using your terminal or command line.
+- Change to the project directory by entering: ```cd Tracker_Crypto_Front``` in the terminal.
 - Enter the command npm i
 - Enter the project folder and run locally by using npm start.
 
 ## Command line steps
 ```
-- $ git clone `$ git clone https://github.com/sergiocortessat/React_Redux_Pokemon_API
+- $ git clone `$ git clone https://github.com/sergiocortessat/Tracker_Crypto_Front/tree/feature
 - $ git checkout develop
-- $ cd React_Redux_Pokemon_API
+- $ cd Tracker_Crypto_Front
 - $ npm i
 - $ npm start
 ```
@@ -91,11 +103,11 @@ The testing has been performed using Jest Framework.
 - Enter npm run watch to keep jest test open
 
 ```
-- $ cd React_Redux_Pokemon_API
+- $ cd cd Tracker_Crypto_Front
 - $ npm run test
 
 ```
-![Tests](test.png)
+![Tests](Test.png)
 
 
 ## Authors
@@ -111,7 +123,7 @@ The testing has been performed using Jest Framework.
 ## Acknowledgements
 
 * [Microverse](https://www.microverse.org/)
-* [Pokemon API](https://pokeapi.co/)
+* [Gregoire Vella](https://www.behance.net/gallery/13271423/Bodytrackit-An-iOs-app-Branding-UX-and-UI)
 
 
 ## 📝 License

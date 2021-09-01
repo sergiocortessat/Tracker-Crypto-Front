@@ -91,7 +91,7 @@ exports[`renders correctly 1`] = `
           />
         </svg>
         <p>
-          More
+          Profile
         </p>
       </li>
     </a>

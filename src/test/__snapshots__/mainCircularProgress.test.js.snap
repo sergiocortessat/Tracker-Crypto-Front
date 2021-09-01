@@ -61,7 +61,7 @@ exports[`renders correctly 1`] = `
         x={50}
         y={50}
       >
-        Loading
+        0
       </text>
     </svg>
     <div
