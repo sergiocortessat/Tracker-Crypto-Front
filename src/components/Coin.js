@@ -31,7 +31,7 @@ const Coin = ({ coins, setSum }) => {
         <img src={coins.picture} alt={coins.name} />
       </div>
       <div className="crypto-info">
-        <h3>{coins.name}</h3>
+        <h3>{coins.name === 'Cardano (ADA)' ? 'Cardano' : coins.name}</h3>
         <h4>
           Goal:
           {' '}
