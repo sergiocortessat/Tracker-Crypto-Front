@@ -34,7 +34,7 @@ const AddMeasurement = () => {
       });
     setTimeout(() => {
       window.location.href = '/';
-    }, 500);
+    }, 1000);
   };
   return (
     <div className="add-measurement">
