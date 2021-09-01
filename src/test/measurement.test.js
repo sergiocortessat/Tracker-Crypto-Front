@@ -2,7 +2,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import renderer from 'react-test-renderer';
 import {
-  BrowserRouter, Switch, Route,
+  BrowserRouter,
 } from 'react-router-dom';
 import Reducers from '../Redux/Reducers';
 import Measurement from '../components/Measurement';
