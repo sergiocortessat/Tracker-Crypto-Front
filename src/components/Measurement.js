@@ -20,6 +20,7 @@ const Measurement = () => {
   const [lastWeek, setLastWeek] = useState([]);
   const now = moment(new Date());
   const coinName = ['Bitcoin', 'Ethereum', 'Cardano', 'Uniswap', 'XRP', 'Polkadot'];
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     getGoal(user.sub).then((res) => {
@@ -27,7 +28,7 @@ const Measurement = () => {
       setGoal(temp.goal);
       setMeasures(temp.measurements);
     });
-  }, []);
+  }, [count]);
 
   useEffect(() => {
     const result = measures.reduce((acc, cur) => acc + cur.unit, 0);
@@ -40,8 +41,8 @@ const Measurement = () => {
       deleteMeasurement(id, accesToken);
     });
     setTimeout(() => {
-      window.location.reload();
-    }, 1000);
+      setCount(count + 1);
+    }, 500);
   };
 
   const fetchData = async () => {
