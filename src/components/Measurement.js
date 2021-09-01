@@ -77,7 +77,7 @@ const Measurement = () => {
         ),
       );
     } catch (e) {
-      console.log('error');
+      return e;
     }
   };
 
