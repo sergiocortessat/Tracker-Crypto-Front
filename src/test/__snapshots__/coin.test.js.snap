@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="coin"
+>
+  <div
+    className="crypto-icon"
+  >
+    <img
+      alt=""
+      src=""
+    />
+  </div>
+  <div
+    className="crypto-info"
+  >
+    <h3>
+      
+    </h3>
+    <h4>
+      Goal:
+       
+    </h4>
+  </div>
+</div>
+`;

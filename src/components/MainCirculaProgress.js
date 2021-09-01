@@ -29,9 +29,13 @@ const MainCircularProgress = ({ percentage }) => (
     </CircularProgressbarWithChildren>
   </>
 );
+
+MainCircularProgress.defaultProps = {
+  percentage: 0,
+};
 // Prop types
 MainCircularProgress.propTypes = {
-  percentage: PropTypes.number.isRequired,
+  percentage: PropTypes.number,
 };
 
 export default MainCircularProgress;

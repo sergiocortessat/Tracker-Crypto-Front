@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="profile"
+>
+  <div
+    className="a-box"
+  >
+    <div
+      className="img-container"
+    >
+      <div
+        className="img-inner"
+      >
+        <div
+          className="inner-skew"
+        >
+          <img
+            alt="profile"
+            src="https://www.kindpng.com/picc/m/252-2524695_dummy-profile-image-jpg-hd-png-download.png"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="text-container"
+    >
+      <h3 />
+      <div />
+      <div
+        className="created-at"
+      >
+        This accont was created on:
+         
+      </div>
+    </div>
+  </div>
+</div>
+`;

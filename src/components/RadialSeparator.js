@@ -1,27 +1,37 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import _ from 'lodash';
+import PropTypes from 'prop-types';
 
-function Separator(props) {
+function Separator({ turns, style }) {
   return (
     <div
       style={{
         position: 'absolute',
         height: '100%',
-        transform: `rotate(${props.turns}turn)`,
+        transform: `rotate(${turns}turn)`,
       }}
     >
-      <div style={props.style} />
+      <div style={style} />
     </div>
   );
 }
 
-function RadialSeparators(props) {
-  const turns = 1 / props.count;
-  return _.range(props.count).map((index) => (
-    <Separator key={index} turns={index * turns} style={props.style} />
+function RadialSeparators({ count, style }) {
+  const turns = 1 / count;
+  return _.range(count).map((index) => (
+    <Separator key={index} turns={index * turns} style={style} />
   ));
 }
+
+// Prop types
+Separator.propTypes = {
+  turns: PropTypes.number.isRequired,
+  style: PropTypes.objectOf(PropTypes.any).isRequired,
+};
+
+RadialSeparators.propTypes = {
+  count: PropTypes.number.isRequired,
+  style: PropTypes.objectOf(PropTypes.any).isRequired,
+};
 
 export default RadialSeparators;

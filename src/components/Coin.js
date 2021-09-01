@@ -31,15 +31,23 @@ const Coin = ({ coins, setSum }) => {
     </div>
   );
 };
-
+// Default propTypes
+Coin.defaultProps = {
+  coins: {
+    id: 0,
+    name: '',
+    picture: '',
+  },
+  setSum: () => {},
+};
 // Prop types
 Coin.propTypes = {
   coins: PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
     picture: PropTypes.string,
-  }).isRequired,
-  setSum: PropTypes.func.isRequired,
+  }),
+  setSum: PropTypes.func,
 };
 
 export default Coin;

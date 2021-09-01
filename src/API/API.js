@@ -2,7 +2,7 @@
 // const measurementEndpoint = 'http://localhost:3000/measurements';
 // const goalEndpoint = 'http://localhost:3000/goals';
 // const coinEndpoint = 'http://localhost:3000/coins';
-// const showUserEndpoint = 'http://localhost:3000/users';
+// const showUserdeleteMeasurementsEndpoint = 'http://localhost:3000/users';
 
 const userEndpoint = 'https://scs-tracker-api.herokuapp.com/users';
 const measurementEndpoint = 'https://scs-tracker-api.herokuapp.com/measurements';

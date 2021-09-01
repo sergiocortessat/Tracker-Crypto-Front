@@ -33,10 +33,15 @@ const CircularProgress = ({ sum, measures }) => {
   );
 };
 
+CircularProgress.defaultProps = {
+  sum: 0,
+  measures: [],
+};
+
 // prop validations
 CircularProgress.propTypes = {
-  sum: PropTypes.number.isRequired,
-  measures: PropTypes.arrayOf(PropTypes.object).isRequired,
+  sum: PropTypes.number,
+  measures: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default CircularProgress;
