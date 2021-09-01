@@ -11,7 +11,7 @@ const MainCircularProgress = ({ percentage }) => (
   <>
     <CircularProgressbarWithChildren
       value={percentage && percentage}
-      text={(percentage && percentage !== Infinity) ? `${Math.round(percentage, 2)}%` : 'Loading'}
+      text={(percentage && percentage !== Infinity) ? `${Math.round(percentage, 2)}%` : '0'}
       strokeWidth={10}
       styles={buildStyles({
         strokeLinecap: 'butt',
