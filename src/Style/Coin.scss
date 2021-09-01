@@ -4,10 +4,10 @@ $blue: #62b5e5;
 
 .coins-container {
   background-color: lightgrey;
-  height: 390px;
   padding: 15px;
   display: flex;
   align-items: center;
+  flex: 1;
 }
 
 .all-coins {

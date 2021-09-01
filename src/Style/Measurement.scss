@@ -4,6 +4,9 @@ $green: #addc91;
 .crypto-container {
   height: 100%;
   color: $grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .crypto-name {
     text-align: center;
@@ -23,7 +26,8 @@ $green: #addc91;
 
   .measurement {
     background: lightgrey;
-    min-height: 250px;
+    flex: 1;
+    // min-height: 250px;
 
     h2 {
       font-size: 1.6rem;
@@ -32,7 +36,6 @@ $green: #addc91;
 
     .measurement-list {
       margin-top: 10px;
-      padding-bottom: 70px;
       display: flex;
       flex-direction: column;
       align-items: center;

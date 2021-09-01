@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
@@ -8,14 +9,23 @@ const Coin = ({ coins, setSum }) => {
   const [goal, setGoal] = useState([]);
 
   useEffect(() => {
-    getGoal(user.sub).then((res) => {
-      const { goal } = res.filter((item) => item.coin_id === coins.id)[0];
-      setGoal(goal);
-      setSum((prev) => prev + goal);
-    });
+    setTimeout(() => {
+      getGoal(user.sub).then((res) => {
+        if (res.filter((item) => item.coin_id === coins.id)[0].goal !== undefined) {
+          const { goal } = res.filter((item) => item.coin_id === coins.id)[0];
+          setGoal(goal);
+          setSum((prev) => prev + goal);
+        } else {
+          setGoal(1);
+          setSum((prev) => prev + goal);
+        }
+      });
+    }, 500);
   }, []);
 
   return (
+    goal
+    && (
     <div key={coins.id} className="coin">
       <div className="crypto-icon">
         <img src={coins.picture} alt={coins.name} />
@@ -25,10 +35,11 @@ const Coin = ({ coins, setSum }) => {
         <h4>
           Goal:
           {' '}
-          {goal && goal}
+          {goal}
         </h4>
       </div>
     </div>
+    )
   );
 };
 // Default propTypes

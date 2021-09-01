@@ -1,4 +1,4 @@
-## Pokemon API
+## Crypto tracker
 
 <p align="center">
   <img height="auto" src="customlogo.png">
@@ -6,13 +6,14 @@
 
 ## About The Project
 
-The pokemon API project allows the users to load all pokemon's in existence until date. As well users can check on specific pokemon's and see their starts, extra information and types.
+The crypto tracker project helps the users to set personal individual goals on how much they wish to buy out of a certain crypto. Then the user can create
+a list of crypto currencies that they are interested in. The user can then set a unit amount for each crypto currency they have and compare their progress against the goals.
 
 <br />
 
 ## Live Version
 
-* [Live Demo](https://sergiocortessat.github.io/React_Redux_Pokemon_API/) 
+* [Live Demo]() 
 
 <br />
 
@@ -46,7 +47,7 @@ The pokemon API project allows the users to load all pokemon's in existence unti
 
 ### Built With
 
-* [JAVASCRIPT] [REACT] [REDUX]
+* [JAVASCRIPT] [REACT] [REDUX] [API]
 
 <br />
 

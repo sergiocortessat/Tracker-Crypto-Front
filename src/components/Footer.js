@@ -30,7 +30,7 @@ const Footer = () => (
       <Link to="/profile">
         <li className="more">
           <MoreHorizIcon />
-          <p>More</p>
+          <p>Profile</p>
         </li>
       </Link>
     </ul>
