@@ -50,7 +50,10 @@ function App() {
           </div>
         </BrowserRouter>
       ) : (
-        <LogInScreen />
+        <>
+          <alert className="alert not-display" />
+          <LogInScreen />
+        </>
       )}
     </>
   );

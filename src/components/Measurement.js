@@ -42,8 +42,8 @@ const Measurement = () => {
       deleteMeasurement(id, accesToken);
     });
     setTimeout(() => {
-      customAlert('Entry deleted', 'red');
       setCount(count + 1);
+      customAlert('Entry deleted', 'red');
     }, 500);
   };
 
