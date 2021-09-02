@@ -42,9 +42,16 @@ body {
 }
 
 .alert {
-  background-color: rgba(255, 0, 0, 0.5);
-  height: 60px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.green {
+  background-color: rgba(185, 243, 108, 0.5);
+}
+
+.red {
+  background-color: rgba(255, 0, 0, 0.5);
 }
