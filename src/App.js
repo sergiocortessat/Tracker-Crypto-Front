@@ -1,12 +1,11 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import {
   BrowserRouter, Switch, Route,
 } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
-  getMeasurements, getGoals, getCoins, getUser,
+  getCoins,
 } from './API/API';
 import { updateCoins } from './Redux/Actions';
 import Loading from './auth0/Loading';
@@ -19,9 +18,8 @@ import Profile from './components/Profile';
 import LogInScreen from './components/LogInScreen';
 
 function App() {
-  // const [list, setList] = useState();
   const {
-    user, isAuthenticated, getAccessTokenSilently, isLoading,
+    isAuthenticated, isLoading,
   } = useAuth0();
 
   const dispatch = useDispatch();
@@ -30,8 +28,6 @@ function App() {
       dispatch(updateCoins(coins));
     });
   }, []);
-
-  // const { coins } = useSelector((state) => state.coins);
 
   if (isLoading) {
     return <Loading />;
@@ -43,7 +39,7 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <NavBar />
-            <alert className="alert" />
+            <alert className="alert not-display" />
             <Switch>
               <Route exact path="/measurements/:id" component={Measurement} />
               <Route exact path="/add-measurement" component={AddMeasurement} />
