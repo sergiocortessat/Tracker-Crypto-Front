@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-unused-vars */
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useEffect, useState } from 'react';
@@ -9,18 +10,17 @@ const Coin = ({ coins, setSum }) => {
   const [goal, setGoal] = useState([]);
 
   useEffect(() => {
-    setTimeout(() => {
+    const temp = () => {
       getGoal(user.sub).then((res) => {
-        if (res.filter((item) => item.coin_id === coins.id)[0].goal !== undefined) {
-          const { goal } = res.filter((item) => item.coin_id === coins.id)[0];
-          setGoal(goal);
-          setSum((prev) => prev + goal);
-        } else {
-          setGoal(1);
-          setSum((prev) => prev + goal);
+        if (res.length < 6) {
+          return temp();
         }
+        const { goal } = res.filter((item) => item.coin_id === coins.id)[0];
+        setGoal(goal);
+        setSum((prev) => prev + goal);
       });
-    }, 500);
+    };
+    temp();
   }, []);
 
   return (
