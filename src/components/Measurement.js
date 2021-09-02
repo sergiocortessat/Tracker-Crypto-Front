@@ -38,11 +38,11 @@ const Measurement = () => {
   }, [measures, goal]);
 
   const handleDelete = (id) => {
-    customAlert('Entry deleted', 'red');
     getAccessTokenSilently().then((accesToken) => {
       deleteMeasurement(id, accesToken);
     });
     setTimeout(() => {
+      customAlert('Entry deleted', 'red');
       setCount(count + 1);
     }, 500);
   };

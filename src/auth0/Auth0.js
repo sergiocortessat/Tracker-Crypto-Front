@@ -12,7 +12,6 @@ const AuthenticationButton = () => {
 
   if (isAuthenticated) {
     const userInfo = userData(user);
-
     getAccessTokenSilently()
       .then((accessToken) => {
         postUser(userInfo, accessToken);

@@ -11,12 +11,10 @@ import Coin from './Coin';
 import '../Style/Coin.scss';
 import CircularProgress from './CircularProgress';
 import '../Style/ProgressBar.scss';
-import customAlert from './PopUpAlert';
 
 const setCoins = () => {
   const { user, getAccessTokenSilently } = useAuth0();
   const { coins } = useSelector((state) => state.coins);
-  const currentUser = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [goals, setGoals] = useState([]);
   const [sum, setSum] = useState(0);
@@ -26,10 +24,8 @@ const setCoins = () => {
     getUser(user.sub).then((res) => {
       dispatch(updateUser(res));
     });
-    if (currentUser.user.sub !== user.sub) {
-      customAlert('Sign in successfully', 'green');
-    }
   }, []);
+
   useEffect(() => {
     getGoal(user.sub).then((res) => {
       setGoals(res);
