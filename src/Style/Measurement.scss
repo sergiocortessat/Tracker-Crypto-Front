@@ -2,7 +2,6 @@ $grey: #67899c;
 $green: #addc91;
 
 .crypto-container {
-  height: 100%;
   color: $grey;
   display: flex;
   flex-direction: column;
@@ -27,7 +26,6 @@ $green: #addc91;
   .measurement {
     background: lightgrey;
     flex: 1;
-    // min-height: 250px;
 
     h2 {
       font-size: 1.6rem;
