@@ -1,5 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable no-unused-vars */
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
@@ -18,6 +16,7 @@ const Coin = ({ coins, setSum }) => {
         const { goal } = res.filter((item) => item.coin_id === coins.id)[0];
         setGoal(goal);
         setSum((prev) => prev + goal);
+        return res;
       });
     };
     temp();

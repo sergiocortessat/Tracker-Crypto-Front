@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 const ALL_COINS = 'ALL_COINS';
 const CURRENT_USER = 'CURRENT_USER';
 const ALL_GOALS = 'All_GOALS';

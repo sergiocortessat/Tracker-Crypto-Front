@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const customAlert = (message, type) => {
   const alert = document.querySelector('.alert');
   if (type === 'green') {

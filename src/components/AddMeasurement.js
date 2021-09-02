@@ -1,8 +1,6 @@
-/* eslint-disable no-unused-vars */
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Select from 'react-select';
 import { getUsers, postMeasurements } from '../API/API';
 import { updateUser } from '../Redux/Actions';
 import '../Style/AddMeasurement.scss';
@@ -15,12 +13,6 @@ const AddMeasurement = () => {
   const currentUser = useSelector((state) => state.user);
   const { user, getAccessTokenSilently } = useAuth0();
   const [unit, setUnit] = useState('');
-  const [limit, setLimit] = useState(1);
-
-  const options = coins.map((coin) => ({
-    id: coin.id,
-    name: coin.name,
-  }));
 
   useEffect(() => {
     getUsers().then((res) => {
@@ -34,7 +26,6 @@ const AddMeasurement = () => {
     customAlert('Measure added', 'green');
     const tempGoal = currentUser.user.coins.filter((c) => c.id === Number(coin))[0].goals;
     const goalID = tempGoal.filter((g) => g.sub === user.sub)[0].id;
-    const { goal } = tempGoal.filter((g) => g.sub === user.sub)[0];
     const userID = currentUser.user.id;
     getAccessTokenSilently()
       .then((accessToken) => {
@@ -52,7 +43,6 @@ const AddMeasurement = () => {
           <span>
             Choose a Crypto:
           </span>
-          {/* <Select id="coins" options={options} name="coins" onChange={(e) => setCoin(e)} /> */}
           <select id="coins" name="coins" onChange={(e) => setCoin(e.target.value)}>
             {coins && coins.map((coin) => (
               <option
@@ -64,7 +54,7 @@ const AddMeasurement = () => {
             ))}
           </select>
           <label className="second-label" htmlFor="quantity">
-            <input placeholder="Units" value={unit} type="number" id={coin} step={0.01} min="0" max={limit} onChange={(e) => setUnit(e.target.value)} />
+            <input placeholder="Units" value={unit} type="number" id={coin} step={0.01} min="0" max={10} onChange={(e) => setUnit(e.target.value)} />
 
           </label>
           <input type="submit" value="Submit" id={coin} onClick={(e) => handleSubmit(e)} />
