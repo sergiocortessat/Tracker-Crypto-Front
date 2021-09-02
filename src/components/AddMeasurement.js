@@ -39,6 +39,9 @@ const AddMeasurement = () => {
       .then((accessToken) => {
         postMeasurements({ user_id: userID, goal_id: goalID, unit }, accessToken);
       });
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 1000);
   };
   return (
     <div className="add-measurement">
