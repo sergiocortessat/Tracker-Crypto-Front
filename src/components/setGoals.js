@@ -1,4 +1,3 @@
-/* eslint-disable array-callback-return */
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useEffect, useState } from 'react';
 import {
@@ -16,6 +15,7 @@ const setGoals = ({ coin, setChange }) => {
         if (item.coin_id === coin) {
           setGoal(item.goal);
         }
+        return item;
       });
     });
   }, [temp]);
