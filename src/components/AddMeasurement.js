@@ -6,6 +6,7 @@ import Select from 'react-select';
 import { getUsers, postMeasurements } from '../API/API';
 import { updateUser } from '../Redux/Actions';
 import '../Style/AddMeasurement.scss';
+import customAlert from './PopUpAlert';
 
 const AddMeasurement = () => {
   const { coins } = useSelector((state) => state.coins);
@@ -30,7 +31,7 @@ const AddMeasurement = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    customAlert('Measure added', 'green');
     const tempGoal = currentUser.user.coins.filter((c) => c.id === Number(coin))[0].goals;
     const goalID = tempGoal.filter((g) => g.sub === user.sub)[0].id;
     const { goal } = tempGoal.filter((g) => g.sub === user.sub)[0];
