@@ -8,6 +8,7 @@ import MainCircularProgress from './MainCirculaProgress';
 import SetGoals from './setGoals';
 import '../Style/ProgressBar.scss';
 import '../Style/Measurement.scss';
+import customAlert from './PopUpAlert';
 
 const Measurement = () => {
   const { user, getAccessTokenSilently } = useAuth0();
@@ -37,6 +38,7 @@ const Measurement = () => {
   }, [measures, goal]);
 
   const handleDelete = (id) => {
+    customAlert('Deleted');
     getAccessTokenSilently().then((accesToken) => {
       deleteMeasurement(id, accesToken);
     });

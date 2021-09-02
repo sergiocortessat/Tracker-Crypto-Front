@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap");
 
 * {
   margin: 0;
@@ -29,5 +29,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
+}
+
+.not-display {
+  display: none;
+}
+
+.display {
+  display: block;
+}
+
+.alert {
+  background-color: rgba(255, 0, 0, 0.5);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -43,6 +43,7 @@ function App() {
         <BrowserRouter>
           <div className="App">
             <NavBar />
+            <alert className="alert" />
             <Switch>
               <Route exact path="/measurements/:id" component={Measurement} />
               <Route exact path="/add-measurement" component={AddMeasurement} />
