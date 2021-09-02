@@ -7,7 +7,7 @@ exports[`renders correctly 1`] = `
   <h2>
     Today:
      
-    2021-9-1 Wednesday
+    2021-9-2 Thursday
   </h2>
   <div
     data-test-id="CircularProgressbarWithChildren"

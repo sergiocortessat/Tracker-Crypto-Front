@@ -31,7 +31,7 @@ exports[`renders correctly 1`] = `
       <div
         className="created-at"
       >
-        This accont was created on:
+        This account was created on:
          
       </div>
     </div>
