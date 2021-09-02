@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import {
   BrowserRouter, Switch, Route,
@@ -23,38 +24,42 @@ function App() {
   } = useAuth0();
 
   const dispatch = useDispatch();
+  const [checkCoin, setCheckCoin] = useState([]);
   useEffect(() => {
     getCoins().then((coins) => {
+      setCheckCoin(coins);
       dispatch(updateCoins(coins));
     });
   }, []);
 
-  if (isLoading) {
+  if (isLoading || checkCoin.length < 1) {
     return <Loading />;
   }
 
   return (
     <>
-      {isAuthenticated ? (
-        <BrowserRouter>
-          <div className="App">
-            <NavBar />
+      {isAuthenticated
+        ? (
+          <BrowserRouter>
+            <div className="App">
+              <NavBar />
+              <alert className="alert not-display" />
+              <Switch>
+                <Route exact path="/measurements/:id" component={Measurement} />
+                <Route exact path="/add-measurement" component={AddMeasurement} />
+                <Route exact path="/profile" component={Profile} />
+                <Route path="/" component={SetCoins} />
+              </Switch>
+              <Footer />
+            </div>
+          </BrowserRouter>
+        ) : (
+          <>
             <alert className="alert not-display" />
-            <Switch>
-              <Route exact path="/measurements/:id" component={Measurement} />
-              <Route exact path="/add-measurement" component={AddMeasurement} />
-              <Route exact path="/profile" component={Profile} />
-              <Route path="/" component={SetCoins} />
-            </Switch>
-            <Footer />
-          </div>
-        </BrowserRouter>
-      ) : (
-        <>
-          <alert className="alert not-display" />
-          <LogInScreen />
-        </>
-      )}
+            <LogInScreen />
+          </>
+        )}
+
     </>
   );
 }
