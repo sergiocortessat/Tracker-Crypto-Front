@@ -16,6 +16,7 @@ import customAlert from './PopUpAlert';
 const setCoins = () => {
   const { user, getAccessTokenSilently } = useAuth0();
   const { coins } = useSelector((state) => state.coins);
+  const currentUser = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const [goals, setGoals] = useState([]);
   const [sum, setSum] = useState(0);
@@ -25,7 +26,9 @@ const setCoins = () => {
     getUser(user.sub).then((res) => {
       dispatch(updateUser(res));
     });
-    customAlert('Sign in successfully', 'green');
+    if (currentUser.user.sub !== user.sub) {
+      customAlert('Sign in successfully', 'green');
+    }
   }, []);
   useEffect(() => {
     getGoal(user.sub).then((res) => {
