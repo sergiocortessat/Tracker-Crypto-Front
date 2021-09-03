@@ -29,6 +29,7 @@ exports[`renders correctly 1`] = `
           max={10}
           min="0"
           onChange={[Function]}
+          pattern="\\\\d*"
           placeholder="Units"
           step={0.01}
           type="number"
