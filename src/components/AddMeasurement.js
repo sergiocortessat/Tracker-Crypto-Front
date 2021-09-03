@@ -23,7 +23,6 @@ const AddMeasurement = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    customAlert('Measure added', 'green');
     const tempGoal = currentUser.user.coins.filter((c) => c.id === Number(coin))[0].goals;
     const goalID = tempGoal.filter((g) => g.sub === user.sub)[0].id;
     const userID = currentUser.user.id;
@@ -32,9 +31,11 @@ const AddMeasurement = () => {
         postMeasurements({ user_id: userID, goal_id: goalID, unit }, accessToken);
       });
     setTimeout(() => {
-      window.location.href = '/';
+      setUnit('');
+      customAlert('Measure added', 'green');
     }, 1000);
   };
+
   return (
     <div className="add-measurement">
       <h1>Add a Measurement</h1>
@@ -49,7 +50,7 @@ const AddMeasurement = () => {
                 key={coin.id}
                 value={coin.id}
               >
-                {coin.name}
+                {coin.name === 'Cardano (ADA)' ? 'Cardano' : coin.name}
               </option>
             ))}
           </select>
