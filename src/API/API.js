@@ -50,9 +50,44 @@ export const getUser = async (id) => {
 // Post requests
 
 export const postUser = async (data, accessToken) => {
+  fetch(userEndpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${accessToken}`,
+    },
+    body: JSON.stringify(data),
+  });
+};
+
+export const postGoals = async (data, accessToken) => {
+  fetch(goalEndpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${accessToken}`,
+    },
+    body: JSON.stringify(data),
+  });
+};
+
+export const postMeasurements = async (data, accessToken) => {
+  fetch(measurementEndpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      authorization: `Bearer ${accessToken}`,
+    },
+    body: JSON.stringify(data),
+  });
+};
+
+// Patch
+
+export const editGoals = async (data, accessToken, coinId) => {
   try {
-    const response = await fetch(userEndpoint, {
-      method: 'POST',
+    const response = await fetch(`${goalEndpoint}/${coinId}`, {
+      method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
         authorization: `Bearer ${accessToken}`,
@@ -62,49 +97,8 @@ export const postUser = async (data, accessToken) => {
     const user = await response.json();
     return user;
   } catch (error) {
-    return error;
+    return error.message;
   }
-};
-
-export const postGoals = async (data, accessToken) => {
-  const response = await fetch(goalEndpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      authorization: `Bearer ${accessToken}`,
-    },
-    body: JSON.stringify(data),
-  });
-  const goals = await response.json();
-  return goals;
-};
-
-export const postMeasurements = async (data, accessToken) => {
-  const response = await fetch(measurementEndpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      authorization: `Bearer ${accessToken}`,
-    },
-    body: JSON.stringify(data),
-  });
-  const goals = await response.json();
-  return goals;
-};
-
-// Patch
-
-export const editGoals = async (data, accessToken, coinId) => {
-  const response = await fetch(`${goalEndpoint}/${coinId}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-      authorization: `Bearer ${accessToken}`,
-    },
-    body: JSON.stringify(data),
-  });
-  const user = await response.json();
-  return user;
 };
 
 // DELETE
