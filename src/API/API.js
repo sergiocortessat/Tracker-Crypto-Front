@@ -50,16 +50,20 @@ export const getUser = async (id) => {
 // Post requests
 
 export const postUser = async (data, accessToken) => {
-  const response = await fetch(userEndpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      authorization: `Bearer ${accessToken}`,
-    },
-    body: JSON.stringify(data),
-  });
-  const user = await response.json();
-  return user;
+  try {
+    const response = await fetch(userEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify(data),
+    });
+    const user = await response.json();
+    return user;
+  } catch (error) {
+    return error;
+  }
 };
 
 export const postGoals = async (data, accessToken) => {
