@@ -1,32 +1,22 @@
-/* eslint-disable no-unused-vars */
 import { useAuth0 } from '@auth0/auth0-react';
-import { postUser,getCoins, postGoals } from '../API';
+import {
+  postUser,
+} from '../API/API';
 import LoginButton from './buttons/LogIn';
 import LogoutButton from './buttons/LogOut';
-
+import { userData } from '../staticData';
+import '../Style/NavBar.scss';
 
 const AuthenticationButton = () => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
-  if (isAuthenticated) {
-    const userData = {
-      sub: user.sub,
-      email: user.email,
-      name: user.name,
-      given_name: user.given_name,
-      family_name: user.family_name,
-      picture: user.picture,
-    };
 
+  if (isAuthenticated) {
+    const userInfo = userData(user);
     getAccessTokenSilently()
       .then((accessToken) => {
-        postUser(userData, accessToken);
+        postUser(userInfo, accessToken);
       });
-
-    }
-      
-
-    
-
+  }
 
   return isAuthenticated ? <LogoutButton /> : <LoginButton />;
 };

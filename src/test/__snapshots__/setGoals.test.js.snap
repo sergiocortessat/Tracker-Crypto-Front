@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<form
+  action="/action_page.php"
+>
+  <label
+    htmlFor="quantity"
+  >
+    Current goal
+     
+    <input
+      inputMode="numeric"
+      max="1000"
+      min="1"
+      name="quantity"
+      onChange={[Function]}
+      placeholder=""
+      type="number"
+      value=""
+    />
+  </label>
+</form>
+`;

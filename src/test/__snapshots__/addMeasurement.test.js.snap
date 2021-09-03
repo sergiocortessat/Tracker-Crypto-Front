@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="add-measurement"
+>
+  <h1>
+    Add a Measurement
+  </h1>
+  <form>
+    <label
+      className="main-label"
+      htmlFor="coins"
+    >
+      <span>
+        Choose a Crypto:
+      </span>
+      <select
+        id="coins"
+        name="coins"
+        onChange={[Function]}
+      />
+      <label
+        className="second-label"
+        htmlFor="quantity"
+      >
+        <input
+          id={1}
+          max={10}
+          min="0"
+          onChange={[Function]}
+          pattern="\\\\d*"
+          placeholder="Units"
+          step={0.01}
+          type="number"
+          value=""
+        />
+      </label>
+      <input
+        id={1}
+        onClick={[Function]}
+        type="submit"
+        value="Submit"
+      />
+    </label>
+  </form>
+</div>
+`;

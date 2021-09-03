@@ -1,0 +1,18 @@
+$grey: #67899c;
+$green: #addc91;
+$blue: #62b5e5;
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  background-color: $grey;
+
+  p {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    color: $green;
+  }
+}

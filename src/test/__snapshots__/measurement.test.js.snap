@@ -1,0 +1,358 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="crypto-container"
+>
+  <div
+    className="crypto-name"
+  />
+  <div
+    className="progress-icon-measurement"
+  >
+    <div
+      data-test-id="CircularProgressbarWithChildren"
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <svg
+          className="CircularProgressbar "
+          data-test-id="CircularProgressbar"
+          style={Object {}}
+          viewBox="0 0 100 100"
+        >
+          <path
+            className="CircularProgressbar-trail"
+            d="
+      M 50,50
+      m 0,-45
+      a 45,45 0 1 1 0,90
+      a 45,45 0 1 1 0,-90
+    "
+            fillOpacity={0}
+            strokeWidth={10}
+            style={
+              Object {
+                "strokeDasharray": "282.7433388230814px 282.7433388230814px",
+                "strokeDashoffset": "0px",
+                "strokeLinecap": "butt",
+              }
+            }
+          />
+          <path
+            className="CircularProgressbar-path"
+            d="
+      M 50,50
+      m 0,-45
+      a 45,45 0 1 1 0,90
+      a 45,45 0 1 1 0,-90
+    "
+            fillOpacity={0}
+            strokeWidth={10}
+            style={
+              Object {
+                "strokeDasharray": "282.7433388230814px 282.7433388230814px",
+                "strokeDashoffset": "282.7433388230814px",
+                "strokeLinecap": "butt",
+              }
+            }
+          />
+          <text
+            className="CircularProgressbar-text"
+            style={Object {}}
+            x={50}
+            y={50}
+          >
+            0
+          </text>
+        </svg>
+        <div
+          data-test-id="CircularProgressbarWithChildren__children"
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "column",
+              "height": "100%",
+              "justifyContent": "center",
+              "marginTop": "-100%",
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "absolute",
+                "transform": "rotate(0turn)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#fff",
+                  "height": "20%",
+                  "width": "2px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "absolute",
+                "transform": "rotate(0.08333333333333333turn)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#fff",
+                  "height": "20%",
+                  "width": "2px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "absolute",
+                "transform": "rotate(0.16666666666666666turn)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#fff",
+                  "height": "20%",
+                  "width": "2px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "absolute",
+                "transform": "rotate(0.25turn)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#fff",
+                  "height": "20%",
+                  "width": "2px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "absolute",
+                "transform": "rotate(0.3333333333333333turn)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#fff",
+                  "height": "20%",
+                  "width": "2px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "absolute",
+                "transform": "rotate(0.41666666666666663turn)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#fff",
+                  "height": "20%",
+                  "width": "2px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "absolute",
+                "transform": "rotate(0.5turn)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#fff",
+                  "height": "20%",
+                  "width": "2px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "absolute",
+                "transform": "rotate(0.5833333333333333turn)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#fff",
+                  "height": "20%",
+                  "width": "2px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "absolute",
+                "transform": "rotate(0.6666666666666666turn)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#fff",
+                  "height": "20%",
+                  "width": "2px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "absolute",
+                "transform": "rotate(0.75turn)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#fff",
+                  "height": "20%",
+                  "width": "2px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "absolute",
+                "transform": "rotate(0.8333333333333333turn)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#fff",
+                  "height": "20%",
+                  "width": "2px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "absolute",
+                "transform": "rotate(0.9166666666666666turn)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "#fff",
+                  "height": "20%",
+                  "width": "2px",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <form
+    action="/action_page.php"
+  >
+    <label
+      htmlFor="quantity"
+    >
+      Current goal
+       
+      <input
+        id={NaN}
+        inputMode="numeric"
+        max="1000"
+        min="1"
+        name="quantity"
+        onChange={[Function]}
+        placeholder=""
+        type="number"
+        value=""
+      />
+    </label>
+  </form>
+  <div
+    className="measurement"
+  >
+    <div
+      className="measurement-list"
+    />
+    <div
+      className="measurement-list"
+    />
+    <div
+      className="measurement-list"
+    />
+  </div>
+</div>
+`;

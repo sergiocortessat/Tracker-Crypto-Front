@@ -1,0 +1,25 @@
+$grey: #67899c;
+$green: #addc91;
+$blue: #62b5e5;
+
+.main-progress {
+  .progress-icon-home {
+    text-align: center;
+    width: 110px;
+    padding: 10px;
+    margin: 0 auto;
+
+    h2 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: black;
+      font-weight: 800;
+    }
+  }
+}
+
+.progress-icon-measurement {
+  text-align: center;
+  width: 160px;
+  margin: 20px auto;
+}

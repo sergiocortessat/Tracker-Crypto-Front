@@ -1,0 +1,38 @@
+$grey: #67899c;
+$green: #addc91;
+$blue: #62b5e5;
+
+.log-in-container {
+  background-color: $grey;
+  height: 100vh;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-left: 200px;
+    padding: 20px;
+  }
+
+  button {
+    background-color: #addc91;
+    width: 200px;
+    height: 100vh;
+    font-size: 1.7rem;
+    color: white;
+    position: fixed;
+    left: 0;
+    max-width: 200px;
+
+    span {
+      display: inline-block;
+      transform: rotate(-90deg);
+    }
+  }
+}

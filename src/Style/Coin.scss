@@ -1,0 +1,77 @@
+$grey: #67899c;
+$green: #addc91;
+$blue: #62b5e5;
+
+.coins-container {
+  background-color: lightgrey;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.all-coins {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+
+  a {
+    width: 100%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: rgba($color: white, $alpha: 0.9);
+    border-radius: 5px;
+  }
+
+  .main-coin {
+    display: flex;
+    width: 50%;
+    // margin-bottom: 40px;
+  }
+}
+
+.coin-list-link {
+  text-decoration: none;
+}
+
+.coin {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+
+  a {
+    width: 100%;
+  }
+
+  .crypto-info {
+    text-align: center;
+    padding: 5px 3px;
+
+    h3 {
+      color: $grey;
+    }
+
+    h4 {
+      color: black;
+    }
+  }
+
+  .crypto-icon {
+    padding: 10px 10px;
+
+    img {
+      border-radius: 50%;
+      width: 40px;
+      height: 48px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .all-coins {
+    width: 800px;
+  }
+}

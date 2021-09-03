@@ -1,0 +1,48 @@
+footer {
+  height: auto;
+  background-color: rgb(46, 44, 44);
+  width: 100%;
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    color: #fff;
+    justify-content: space-around;
+
+    a {
+      padding: 10px 0;
+      text-decoration: none;
+      width: 100%;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        svg {
+          color: lightgrey;
+        }
+
+        p {
+          font-size: 0.6rem;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  a:hover {
+    background-color: #fff;
+
+    li {
+      svg {
+        color: black;
+      }
+
+      p {
+        color: black;
+      }
+    }
+  }
+}
