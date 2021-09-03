@@ -55,7 +55,7 @@ const AddMeasurement = () => {
             ))}
           </select>
           <label className="second-label" htmlFor="quantity">
-            <input placeholder="Units" value={unit} type="number" id={coin} step={0.01} min="0" max={10} onChange={(e) => setUnit(e.target.value)} />
+            <input placeholder="Units" value={unit} type="number" pattern="\d*" id={coin} step={0.01} min="0" max={10} onChange={(e) => setUnit(e.target.value)} />
 
           </label>
           <input type="submit" value="Submit" id={coin} onClick={(e) => handleSubmit(e)} />
