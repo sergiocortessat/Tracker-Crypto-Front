@@ -40,7 +40,7 @@ const setGoals = ({ coin, setChange }) => {
         <label htmlFor="quantity">
           Current goal
           {' '}
-          <input value={goal || 1} placeholder="" type="number" id={coin} name="quantity" min="1" max="1000" onChange={changeGoal} />
+          <input value={goal} placeholder="" type="number" id={coin} name="quantity" min="1" max="1000" inputMode="numeric" onChange={changeGoal} />
         </label>
       </form>
     </>
